@@ -1,13 +1,10 @@
-//getData = getDataFunction;
+;
 createModel =  createModelFunction;
 //prepareData = prepareDataFunction
 trainModel = trainModelFunction;
 evaluateModel = evaluateModelFunction;
 
 async function run() {
-  
-  //const data = await getData();
-  //displayData(data);
   
 	const model = createModel();  
 	tfvis.show.modelSummary({name: 'Model Summary'}, model);
@@ -21,31 +18,7 @@ async function run() {
   await evaluateModel(model, inputs, outputs);
 }
 
-/**
-  * @desc retrieves data from defined location
-  * @return wine data as json
-*/
-/*async function getDataFunction() {
-  const wineDataReq = await fetch('https://raw.githubusercontent.com/NMZivkovic/file_hosting/master/wine_quality.json');  
-  const wineData = await wineDataReq.json();  
-  return wineData;
-}
 
-
-
-function singlePlot(values, name, xoutput, youtput)
-{
-  tfvis.render.scatterplot(
-    {name: name},
-    {values}, 
-    {
-      xoutput: xoutput,
-      youtput: youtput,
-      height: 300
-    }
-  );
-}
-*/
 
 
 /**
@@ -66,20 +39,7 @@ function createModelFunction()
   return model;
 }
 
-/**
-  * @desc creates array of input data for every sample
-  * @param json data - complete json that contains wine quality data 
-  * @return array of input data
-*/
 
-/*
-function extractInputs(data)
-{
-  let inputs = []
-  inputs = data.map(d => [d.fixed_acidity, d.volatile_acidity, d.citric_acid, d.residual_sugar, d.chlorides, d.free_sulfur_dioxide, d.total_sulfur_dioxide, d.density, d.pH, d.sulphates, d.alcohol])
-	return inputs;
-}
-*/
 /**
   * @desc converts data from json format to tensors
   * @param json data - complete json that contains wine quality data 
